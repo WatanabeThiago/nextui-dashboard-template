@@ -3,18 +3,26 @@ import Chart, { Props } from "react-apexcharts";
 
 const state: Props["series"] = [
   {
-    name: "Series1",
+    name: "Pix",
     data: [31, 40, 28, 51, 42, 109, 100],
   },
   {
-    name: "Series2",
-    data: [11, 32, 45, 32, 34, 52, 41],
+    name: "Apple Pay",
+    data: [11, 32, 45, 32, 34, 92, 41],
+  },
+  {
+    name: "G Pay",
+    data: [11, 32, 45, 32, 34, 82, 41],
+  },
+  {
+    name: "Offline",
+    data: [2, 4, 9, 5, 0, 1, 2],
   },
 ];
 
 const options: Props["options"] = {
   chart: {
-    type: "area",
+    type: "line",
     animations: {
       easing: "linear",
       speed: 300,
@@ -27,9 +35,9 @@ const options: Props["options"] = {
     },
     id: "basic-bar",
     foreColor: "hsl(var(--nextui-default-800))",
-    stacked: true,
+    stacked: false,
     toolbar: {
-      show: false,
+      show: true,
     },
   },
 

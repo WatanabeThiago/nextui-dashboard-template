@@ -1,4 +1,4 @@
-import { Avatar, AvatarGroup, Card, CardBody } from "@nextui-org/react";
+import { Avatar, AvatarGroup, Card, CardBody, CardHeader } from "@nextui-org/react";
 import React from "react";
 
 const pictureUsers = [
@@ -11,31 +11,51 @@ const pictureUsers = [
 
 export const CardAgents = () => {
   return (
-    <Card className=" bg-default-50 rounded-xl shadow-md px-4 py-6 w-full">
-      <CardBody className="py-5 gap-6">
-        <div className="flex gap-2.5 justify-center">
-          <div className="flex flex-col border-dashed border-2 border-divider py-2 px-6 rounded-xl">
-            <span className="text-default-900 text-xl font-semibold">
-              {" "}
-              {"⭐"}Agents
-            </span>
-          </div>
-        </div>
+    <Card
+    isPressable
+    className="col-span-12 sm:col-span-4 h-[300px] w-full bg-default-50">
+    <CardHeader className="px-6 flex items-center text-center">
+        <h4 className="font-semibold text-xl ">Ingressos</h4>
+    </CardHeader>
 
-        <div className="flex items-center gap-6 flex-col">
-          <span className="text-xs">
-            Meet your agenda and see their ranks to get the best results
-          </span>
-          <AvatarGroup isBordered>
-            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
-            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
-            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
-            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
-            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
-          </AvatarGroup>
+    <CardBody >
+        <div className='flex justify-between bg-black/5 p-3 px-4 rounded-xl text-sm font-semibold text-black/70 dark:text-white/90'>
+            <span>
+                Ingresso
+            </span>
+            <span>
+                Quantidade
+            </span>
         </div>
-      </CardBody>
-    </Card>
+        <div>
+            <div className='font-semibold text-sm p-4 flex justify-between'>
+                <span>
+                    Área VIP - 1° Lote
+                </span>
+                <span>
+                    1.33% (2/50)
+                </span>
+            </div>
+
+
+            <div className='font-semibold text-sm p-4 flex justify-between'>
+                <span>
+                    Camarote - 1° Lote
+                </span>
+                <span>
+                    2.33% (3/50)
+                </span>
+            </div>
+            <div className='font-semibold text-sm p-4 flex justify-between'>
+                <span>
+                    Pista - 1° Lote
+                </span>
+                <span>
+                    4.33% (9/50)
+                </span>
+            </div>
+        </div>
+    </CardBody>
+</Card>
   );
 };

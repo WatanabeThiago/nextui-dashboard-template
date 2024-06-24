@@ -19,6 +19,7 @@ import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { ChangeLogIcon } from "../icons/sidebar/changelog-icon";
 import { usePathname } from "next/navigation";
+import { PartyIcon } from "../icons/sidebar/party-icon";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -40,34 +41,45 @@ export const SidebarWrapper = () => {
         <div className="flex flex-col justify-between h-full">
           <div className={Sidebar.Body()}>
             <SidebarItem
-              title="Home"
+              title="Dashboard"
               icon={<HomeIcon />}
               isActive={pathname === "/"}
               href="/"
             />
-            <SidebarMenu title="Main Menu">
+            <SidebarMenu title="Menu Principal">
+            <SidebarItem
+                isActive={pathname === "/reports"}
+                title="Editar Evento"
+                icon={<PartyIcon />}
+              />
               <SidebarItem
                 isActive={pathname === "/accounts"}
-                title="Accounts"
+                title="Ingressos"
                 icon={<AccountsIcon />}
                 href="accounts"
               />
               <SidebarItem
+                isActive={pathname === "/vendas"}
+                title="Vendas"
+                icon={<AccountsIcon />}
+                href="vendas"
+              />
+              <SidebarItem
                 isActive={pathname === "/payments"}
-                title="Payments"
+                title="Pagamentos"
                 icon={<PaymentsIcon />}
               />
-              <CollapseItems
+              {/* <CollapseItems
                 icon={<BalanceIcon />}
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
                 title="Balances"
-              />
+              /> */}
               <SidebarItem
                 isActive={pathname === "/customers"}
-                title="Customers"
+                title="Clientes"
                 icon={<CustomersIcon />}
               />
-              <SidebarItem
+              {/* <SidebarItem
                 isActive={pathname === "/products"}
                 title="Products"
                 icon={<ProductsIcon />}
@@ -76,31 +88,32 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/reports"}
                 title="Reports"
                 icon={<ReportsIcon />}
-              />
+              /> */}
+   
             </SidebarMenu>
 
-            <SidebarMenu title="General">
+            <SidebarMenu title="Geral">
               <SidebarItem
                 isActive={pathname === "/developers"}
-                title="Developers"
+                title="GTM e Meta Pixel"
                 icon={<DevIcon />}
               />
               <SidebarItem
                 isActive={pathname === "/view"}
-                title="View Test Data"
+                title="Dados Bancários"
                 icon={<ViewIcon />}
               />
               <SidebarItem
                 isActive={pathname === "/settings"}
-                title="Settings"
+                title="Configurações"
                 icon={<SettingsIcon />}
               />
             </SidebarMenu>
 
-            <SidebarMenu title="Updates">
+            <SidebarMenu title="Recuperação de Vendas">
               <SidebarItem
                 isActive={pathname === "/changelog"}
-                title="Changelog"
+                title="Compras Abandonadas"
                 icon={<ChangeLogIcon />}
               />
             </SidebarMenu>

@@ -43,7 +43,7 @@ export const NavbarWrapper = ({ children }: Props) => {
         >
           <div className="flex items-center gap-2 max-md:hidden">
             <FeedbackIcon />
-            <span>Feedback?</span>
+            <span>Feedback</span>
           </div>
 
           <NotificationsDropdown />

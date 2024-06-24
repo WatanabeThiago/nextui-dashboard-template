@@ -19,22 +19,20 @@ export const Accounts = () => {
         <li className="flex gap-2">
           <HouseIcon />
           <Link href={"/"}>
-            <span>Home</span>
+            <span>Ínicio</span>
           </Link>
           <span> / </span>{" "}
         </li>
 
         <li className="flex gap-2">
           <UsersIcon />
-          <span>Users</span>
+          <span>Vendas</span>
           <span> / </span>{" "}
         </li>
-        <li className="flex gap-2">
-          <span>List</span>
-        </li>
+    
       </ul>
 
-      <h3 className="text-xl font-semibold">All Accounts</h3>
+      <h3 className="text-xl font-semibold">Todas as Contas</h3>
       <div className="flex justify-between flex-wrap gap-4 items-center">
         <div className="flex items-center gap-3 flex-wrap md:flex-nowrap">
           <Input
@@ -42,7 +40,7 @@ export const Accounts = () => {
               input: "w-full",
               mainWrapper: "w-full",
             }}
-            placeholder="Search users"
+            placeholder="Buscar por nome..."
           />
           <SettingsIcon />
           <TrashIcon />
@@ -52,7 +50,7 @@ export const Accounts = () => {
         <div className="flex flex-row gap-3.5 flex-wrap">
           <AddUser />
           <Button color="primary" startContent={<ExportIcon />}>
-            Export to CSV
+            Exportar para Excell
           </Button>
         </div>
       </div>

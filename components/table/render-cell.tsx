@@ -16,24 +16,18 @@ export const RenderCell = ({ user, columnKey }: Props) => {
   switch (columnKey) {
     case "name":
       return (
-        <User
-          avatarProps={{
-            src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-          }}
-          name={cellValue}
-        >
-          {user.email}
-        </User>
+          user.name
       );
-    case "role":
+    case "paymentMethod":
       return (
         <div>
+            <div>
+            <span className="font-semibold">{user.value}</span>
+          </div>
           <div>
             <span>{cellValue}</span>
           </div>
-          <div>
-            <span>{user.team}</span>
-          </div>
+        
         </div>
       );
     case "status":
@@ -42,9 +36,9 @@ export const RenderCell = ({ user, columnKey }: Props) => {
           size="sm"
           variant="flat"
           color={
-            cellValue === "active"
+            cellValue === "Entregue"
               ? "success"
-              : cellValue === "paused"
+              : cellValue === "Recusado"
               ? "danger"
               : "warning"
           }
@@ -57,14 +51,14 @@ export const RenderCell = ({ user, columnKey }: Props) => {
       return (
         <div className="flex items-center gap-4 ">
           <div>
-            <Tooltip content="Details">
+            <Tooltip content="Detalhes">
               <button onClick={() => console.log("View user", user.id)}>
                 <EyeIcon size={20} fill="#979797" />
               </button>
             </Tooltip>
           </div>
           <div>
-            <Tooltip content="Edit user" color="secondary">
+            <Tooltip content="Editar Compra" color="secondary">
               <button onClick={() => console.log("Edit user", user.id)}>
                 <EditIcon size={20} fill="#979797" />
               </button>
@@ -72,7 +66,7 @@ export const RenderCell = ({ user, columnKey }: Props) => {
           </div>
           <div>
             <Tooltip
-              content="Delete user"
+              content="Deletar Compra"
               color="danger"
               onClick={() => console.log("Delete user", user.id)}
             >
